@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alternativas Digitales Europeas</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('/api/placeholder/1000/600');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.2;
+            z-index: -1;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        .header {
+            background-color: #003399;
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            height: 80px;
+        }
+        .eu-flag {
+            width: 60px;
+            height: 40px;
+            margin-right: 15px;
+            background-color: #003399;
+            position: relative;
+            overflow: hidden;
+        }
+        .stars {
+            color: yellow;
+            font-size: 9px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+        .star {
+            margin: 2px;
+        }
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .language-selector {
+            margin-left: auto;
+            padding: 5px;
+        }
+        .content-area {
+            display: flex;
+            flex: 1;
+        }
+        .sidebar {
+            width: 200px;
+            background-color: #f0f0f0;
+            padding: 10px;
+            overflow-y: auto;
+        }
+        .main-content {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        .tab {
+            padding: 10px;
+            margin-bottom: 5px;
+            background-color: #003399;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .tab:hover {
+            background-color: #0055cc;
+        }
+        .tab.active {
+            background-color: #0055cc;
+            font-weight: bold;
+        }
+        .content-section {
+            display: none;
+        }
+        .content-section.active {
+            display: block;
+        }
+        .service-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            background-color: white;
+            display: flex;
+            align-items: center;
+        }
+        .service-icon {
+            width: 50px;
+            height: 50px;
+            margin-right: 15px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .service-info {
+            flex: 1;
+        }
+        .service-name {
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        .service-origin {
+            font-style: italic;
+            margin-bottom: 5px;
+            color: #666;
+        }
+        .service-description {
+            margin-bottom: 10px;
+        }
+        .service-link {
+            color: #003399;
+            text-decoration: none;
+        }
+        .service-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    <div class="container">
+        <div class="header">
+            <div class="eu-flag">
+                <div class="stars">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                </div>
+            </div>
+            <div class="title">Alternativas Digitales Europeas</div>
+            <div class="language-selector">
+                <select id="language">
+                    <option value="es">Español</option>
+                    <option value="eo">Esperanto</option>
+                </select>
+            </div>
+        </div>
+        <div class="content-area">
+            <div class="sidebar">
+                <div class="tab active" data-tab="inicio">Inicio</div>
+                <div class="tab" data-tab="webmail">Webmail Europeos</div>
+                <div class="tab" data-tab="drive">Almacenamiento en la Nube</div>
+                <div class="tab" data-tab="office">Herramientas de Oficina</div>
+            </div>
+            <div class="main-content">
+                <div class="content-section active" id="inicio">
+                    <h2>Bienvenido a Alternativas Digitales Europeas</h2>
+                    <p>Esta guía le ayudará a descubrir alternativas europeas a servicios digitales comunes, contribuyendo a la soberanía digital europea.</p>
+                    
+                    <h3>En esta guía encontrará:</h3>
+                    <ul>
+                        <li>Alternativas europeas de servicios de correo electrónico web (webmail)</li>
+                        <li>Servicios europeos de almacenamiento en la nube</li>
+                        <li>Herramientas ofimáticas desarrolladas en Europa</li>
+                    </ul>
+                    
+                    <p>Todas las opciones presentadas tienen su origen en países miembros de la Unión Europea, lo que garantiza que sus datos están protegidos por la legislación europea de protección de datos (GDPR).</p>
+                    
+                    <p>Seleccione una categoría en el menú de la izquierda para explorar las alternativas disponibles.</p>
+                </div>
+                
+                <div class="content-section" id="webmail">
+                    <h2>Alternativas Europeas de Webmail</h2>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">📧</div>
+                        <div class="service-info">
+                            <div class="service-name">ProtonMail</div>
+                            <div class="service-origin">Origen: Suiza</div>
+                            <div class="service-description">
+                                Servicio de correo electrónico cifrado de extremo a extremo con enfoque en privacidad y seguridad. Ofrece versiones gratuitas y de pago, con aplicaciones para Android e iOS.
+                            </div>
+                            <a href="https://protonmail.com" class="service-link" target="_blank">protonmail.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">📧</div>
+                        <div class="service-info">
+                            <div class="service-name">Tutanota</div>
+                            <div class="service-origin">Origen: Alemania</div>
+                            <div class="service-description">
+                                Servicio de correo electrónico seguro y encriptado con énfasis en la protección de datos. Cumple con el GDPR y todas las comunicaciones están cifradas. Disponible para Android e iOS.
+                            </div>
+                            <a href="https://tutanota.com" class="service-link" target="_blank">tutanota.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">📧</div>
+                        <div class="service-info">
+                            <div class="service-name">Mailfence</div>
+                            <div class="service-origin">Origen: Bélgica</div>
+                            <div class="service-description">
+                                Servicio de correo electrónico seguro que ofrece cifrado, firma digital y otras funciones de seguridad. Incluye calendario y contactos, con aplicaciones para dispositivos móviles.
+                            </div>
+                            <a href="https://mailfence.com" class="service-link" target="_blank">mailfence.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">📧</div>
+                        <div class="service-info">
+                            <div class="service-name">Posteo</div>
+                            <div class="service-origin">Origen: Alemania</div>
+                            <div class="service-description">
+                                Servicio de correo electrónico sostenible y orientado a la privacidad. Se financia exclusivamente mediante suscripciones, sin publicidad ni venta de datos. Proporciona acceso desde cualquier cliente de correo.
+                            </div>
+                            <a href="https://posteo.de" class="service-link" target="_blank">posteo.de</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="content-section" id="drive">
+                    <h2>Alternativas Europeas de Almacenamiento en la Nube</h2>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">💾</div>
+                        <div class="service-info">
+                            <div class="service-name">Nextcloud</div>
+                            <div class="service-origin">Origen: Alemania</div>
+                            <div class="service-description">
+                                Plataforma de almacenamiento en la nube de código abierto que se puede autoalojar o usar a través de proveedores europeos. Ofrece funciones de sincronización de archivos, calendario y contactos. Disponible para Android e iOS.
+                            </div>
+                            <a href="https://nextcloud.com" class="service-link" target="_blank">nextcloud.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">💾</div>
+                        <div class="service-info">
+                            <div class="service-name">pCloud</div>
+                            <div class="service-origin">Origen: Suiza</div>
+                            <div class="service-description">
+                                Servicio de almacenamiento en la nube con servidores en la UE y opción de cifrado de cliente. Ofrece pagos únicos de por vida, además de planes de suscripción. Aplicaciones disponibles para todas las plataformas.
+                            </div>
+                            <a href="https://pcloud.com" class="service-link" target="_blank">pcloud.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">💾</div>
+                        <div class="service-info">
+                            <div class="service-name">Tresorit</div>
+                            <div class="service-origin">Origen: Suiza/Hungría</div>
+                            <div class="service-description">
+                                Servicio de almacenamiento en la nube con cifrado de extremo a extremo, centrado en la seguridad para empresas y profesionales. Cuenta con apps para dispositivos móviles y escritorio.
+                            </div>
+                            <a href="https://tresorit.com" class="service-link" target="_blank">tresorit.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">💾</div>
+                        <div class="service-info">
+                            <div class="service-name">Seafile</div>
+                            <div class="service-origin">Origen: Alemania (desarrollo principal)</div>
+                            <div class="service-description">
+                                Plataforma de almacenamiento de archivos de código abierto que permite la sincronización, uso compartido y colaboración. Disponible como solución autoalojada o gestionada, con aplicaciones para iOS y Android.
+                            </div>
+                            <a href="https://www.seafile.com" class="service-link" target="_blank">seafile.com</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="content-section" id="office">
+                    <h2>Alternativas Europeas de Herramientas de Oficina</h2>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">📝</div>
+                        <div class="service-info">
+                            <div class="service-name">LibreOffice</div>
+                            <div class="service-origin">Origen: Alemania (The Document Foundation)</div>
+                            <div class="service-description">
+                                Suite ofimática completa de código abierto que incluye procesador de textos, hoja de cálculo, presentaciones, dibujo y base de datos. Versión móvil disponible como LibreOffice Viewer para Android.
+                            </div>
+                            <a href="https://www.libreoffice.org" class="service-link" target="_blank">libreoffice.org</a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">📝</div>
+                        <div class="service-info">
+                            <div class="service-name">OnlyOffice</div>
+                            <div class="service-origin">Origen: Letonia</div>
+                            <div class="service-description">
+                                Suite ofimática online y de escritorio compatible con formatos de Microsoft Office. Ofrece procesador de textos, hoja de cálculo y presentaciones, con opciones de colaboración en tiempo real. Disponible para Android e iOS.
+                            </div>
+                            <a href="https://www.onlyoffice.com" class="service-link" target="_blank">onlyoffice.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">📝</div>
+                        <div class="service-info">
+                            <div class="service-name">Collabora Office</div>
+                            <div class="service-origin">Origen: Reino Unido/Alemania</div>
+                            <div class="service-description">
+                                Suite ofimática basada en LibreOffice, optimizada para la colaboración en línea y la integración con servicios como Nextcloud. Ofrece aplicaciones para Android e iOS.
+                            </div>
+                            <a href="https://www.collaboraoffice.com" class="service-link" target="_blank">collaboraoffice.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">📝</div>
+                        <div class="service-info">
+                            <div class="service-name">Cryptpad</div>
+                            <div class="service-origin">Origen: Francia</div>
+                            <div class="service-description">
+                                Suite colaborativa en línea con cifrado de extremo a extremo. Incluye documentos de texto, hojas de cálculo, presentaciones, formularios y más. Enfocada en privacidad y seguridad.
+                            </div>
+                            <a href="https://cryptpad.fr" class="service-link" target="_blank">cryptpad.fr</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Cambiar entre pestañas
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Desactivar todas las pestañas y contenidos
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.content-section').forEach(section => section.classList.remove('active'));
+                
+                // Activar la pestaña y contenido seleccionados
+                tab.classList.add('active');
+                document.getElementById(tab.getAttribute('data-tab')).classList.add('active');
+            });
+        });
+        
+        // Cambiar idioma
+        document.getElementById('language').addEventListener('change', function() {
+            const language = this.value;
+            
+            if (language === 'eo') {
+                // Cambiar a Esperanto
+                document.querySelector('.title').textContent = 'Eŭropaj Alternativoj por Digitalaj Servoj';
+                document.querySelector('#inicio h2').textContent = 'Bonvenon al Eŭropaj Digitalaj Alternativoj';
+                document.querySelector('#inicio p:first-of-type').textContent = 'Ĉi tiu gvidilo helpos vin malkovri eŭropajn alternativojn al oftaj digitalaj servoj, kontribuante al eŭropa digita suvereneco.';
+                document.querySelector('#inicio h3').textContent = 'En ĉi tiu gvidilo vi trovos:';
+                
+                const items = document.querySelectorAll('#inicio ul li');
+                items[0].textContent = 'Eŭropaj alternativoj por retpoŝtaj servoj';
+                items[1].textContent = 'Eŭropaj nubaj konservejaj servoj';
+                items[2].textContent = 'Oficejaj iloj evoluigitaj en Eŭropo';
+                
+                document.querySelectorAll('#inicio p')[1].textContent = 'Ĉiuj prezentitaj opcioj devenas de landoj membroj de Eŭropa Unio, garantiante ke viaj datumoj estas protektitaj de eŭropa datumprotekta leĝaro (GDPR).';
+                document.querySelectorAll('#inicio p')[2].textContent = 'Elektu kategorion en la maldekstra menuo por esplori la disponeblajn alternativojn.';
+                
+                document.querySelector('#webmail h2').textContent = 'Eŭropaj Alternativoj por Retpoŝto';
+                document.querySelector('#drive h2').textContent = 'Eŭropaj Alternativoj por Nuba Konservado';
+                document.querySelector('#office h2').textContent = 'Eŭropaj Alternativoj por Oficejaj Iloj';
+                
+                document.querySelector('.tab[data-tab="inicio"]').textContent = 'Ĉefpaĝo';
+                document.querySelector('.tab[data-tab="webmail"]').textContent = 'Retpoŝto';
+                document.querySelector('.tab[data-tab="drive"]').textContent = 'Nuba Konservado';
+                document.querySelector('.tab[data-tab="office"]').textContent = 'Oficejaj Iloj';
+                
+                // Cambiar textos de las tarjetas
+                document.querySelectorAll('.service-origin').forEach(origin => {
+                    origin.textContent = origin.textContent.replace('Origen:', 'Deveno:');
+                });
+                
+            } else {
+                // Cambiar a Español
+                document.querySelector('.title').textContent = 'Alternativas Digitales Europeas';
+                document.querySelector('#inicio h2').textContent = 'Bienvenido a Alternativas Digitales Europeas';
+                document.querySelector('#inicio p:first-of-type').textContent = 'Esta guía le ayudará a descubrir alternativas europeas a servicios digitales comunes, contribuyendo a la soberanía digital europea.';
+                document.querySelector('#inicio h3').textContent = 'En esta guía encontrará:';
+                
+                const items = document.querySelectorAll('#inicio ul li');
+                items[0].textContent = 'Alternativas europeas de servicios de correo electrónico web (webmail)';
+                items[1].textContent = 'Servicios europeos de almacenamiento en la nube';
+                items[2].textContent = 'Herramientas ofimáticas desarrolladas en Europa';
+                
+                document.querySelectorAll('#inicio p')[1].textContent = 'Todas las opciones presentadas tienen su origen en países miembros de la Unión Europea, lo que garantiza que sus datos están protegidos por la legislación europea de protección de datos (GDPR).';
+                document.querySelectorAll('#inicio p')[2].textContent = 'Seleccione una categoría en el menú de la izquierda para explorar las alternativas disponibles.';
+                
+                document.querySelector('#webmail h2').textContent = 'Alternativas Europeas de Webmail';
+                document.querySelector('#drive h2').textContent = 'Alternativas Europeas de Almacenamiento en la Nube';
+                document.querySelector('#office h2').textContent = 'Alternativas Europeas de Herramientas de Oficina';
+                
+                document.querySelector('.tab[data-tab="inicio"]').textContent = 'Inicio';
+                document.querySelector('.tab[data-tab="webmail"]').textContent = 'Webmail Europeos';
+                document.querySelector('.tab[data-tab="drive"]').textContent = 'Almacenamiento en la Nube';
+                document.querySelector('.tab[data-tab="office"]').textContent = 'Herramientas de Oficina';
+                
+                document.querySelectorAll('.service-origin').forEach(origin => {
+                    origin.textContent = origin.textContent.replace('Deveno:', 'Origen:');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soberanía Digital Europea</title>
+    <link rel="stylesheet" href="estiloj.css">
+</head>
+<body>
+    <div class="background"></div>
+    <div class="container">
+        <div class="header">
+			<img src="https://img.freeflagicons.com/thumb/round_icon/european_union/european_union_640.png" alt="Bandera de la UE" class="eu-flag">
+            <h1 class="title">Soberanía Digital Europea</h1>            
+            <div class="language-selector">
+                <select id="language">
+                    <option value="es">Español</option>
+                    <option value="eo">Esperanto</option>
+                </select>
+            </div>
+        </div>
+        <div class="content-area">
+            <div class="sidebar">
+                <div class="tab active" data-tab="inicio">Inicio</div>
+                <div class="tab" data-tab="navegadores">Estudio de Navegadores y Buscadores</div>
+                <div class="tab" data-tab="alternativas-pc">Alternativas Europeas</div>
+                <div class="tab" data-tab="alternativas-movil">Alternativas Para móviles</div>
+                <div class="tab" data-tab="webmail">Webmail Europeos</div>
+                <div class="tab" data-tab="drive">Almacenamiento en la Nube</div>
+                <div class="tab" data-tab="office">Herramientas de Oficina</div>
+            </div>
+            <div class="main-content">
+                <iframe id="content-frame" src="inicio.html" width="100%" height="100%"></iframe>
+            </div>
+        </div>
+        <footer class="footer">
+            <h5 class="lema">Por la soberanía Europea en servicios digitales, no a los aranceles de Trump</h5> 
+        </footer>
+    </div>
+
+    <script>
+		lang='';
+
+        // Cambiar entre pestañas
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Desactivar todas las pestañas
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                
+                // Activar la pestaña seleccionada
+                tab.classList.add('active');
+                
+                // Cargar el contenido correspondiente en el iframe
+                const tabName = tab.getAttribute('data-tab');
+                document.getElementById('content-frame').src = tabName + lang + '.html';
+            });
+        });
+        
+        // Cambiar idioma
+        document.getElementById('language').addEventListener('change', function() {
+            const language = this.value;
+            
+            if (language === 'eo') {
+				lang='_eo';       
+                // Cambiar a Esperanto
+                document.querySelector('.title').textContent = 'Eŭropa Digitala Suvereneco';
+                document.querySelector('.lema').textContent = 'Por Eŭropa suvereneco en ciferecaj servoj, ne la tarifoj De Trump';
+                document.querySelector('.tab[data-tab="inicio"]').textContent = 'Ĉefpaĝo';
+                document.querySelector('.tab[data-tab="navegadores"]').textContent = 'Ĝenerala studo de retumiloj kaj serĉiloj';
+                document.querySelector('.tab[data-tab="alternativas-pc"]').textContent = 'Eŭropaj alternativoj';
+                document.querySelector('.tab[data-tab="alternativas-movil"]').textContent = 'Eŭropaj alternativoj por poŝtelefono';
+                document.querySelector('.tab[data-tab="webmail"]').textContent = 'Retpoŝto';
+                document.querySelector('.tab[data-tab="drive"]').textContent = 'Nuba Konservado';
+                document.querySelector('.tab[data-tab="office"]').textContent = 'Oficejaj Iloj';
+                
+                // Cambiar el idioma en los iframes
+                // const currentTab = document.querySelector('.tab.active').getAttribute('data-tab');
+                // document.getElementById('content-frame').src = currentTab + '_eo.html';
+		
+            } else {
+				lang='';
+                // Cambiar a Español
+                document.querySelector('.title').textContent = 'Alternativas Digitales Europeas';
+                document.querySelector('.lema').textContent = 'Por la soberanía Europea en servicios digitales, no a los aranceles de Trump';
+                document.querySelector('.tab[data-tab="inicio"]').textContent = 'Inicio';
+                document.querySelector('.tab[data-tab="navegadores"]').textContent = 'Estudio general de navegadores y buscadores';
+                document.querySelector('.tab[data-tab="alternativas-pc"]').textContent = 'Alternativas europeas de navegadores y buscadores';
+                document.querySelector('.tab[data-tab="alternativas-movil"]').textContent = 'Alternativas europeas para móviles';
+                document.querySelector('.tab[data-tab="webmail"]').textContent = 'Webmail Europeos';
+                document.querySelector('.tab[data-tab="drive"]').textContent = 'Almacenamiento en la Nube';
+                document.querySelector('.tab[data-tab="office"]').textContent = 'Herramientas de Oficina';
+                
+                // Cambiar el idioma en los iframes
+                // const currentTab = document.querySelector('.tab.active').getAttribute('data-tab');
+                // document.getElementById('content-frame').src = currentTab + '.html';
+            }
+            const currentTab = document.querySelector('.tab.active').getAttribute('data-tab');
+            document.getElementById('content-frame').src = currentTab + lang + '.html';
+        });
+    </script>
+</body>
+</html>
