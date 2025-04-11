@@ -13,10 +13,10 @@ body, html {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('1352634.jpg');
+    background-image: url('../images/1352634.jpeg');
     background-size: cover;
     background-position: center;
-    opacity: 0.65;
+    opacity: 0.75;
     z-index: -1;
 }
 .container {
@@ -66,7 +66,7 @@ body, html {
     flex: 1;
 }
 .sidebar {
-    width: 130px;
+    width: 120px;
     background-color: #353434;
     padding: 10px;
     overflow-y: auto;
