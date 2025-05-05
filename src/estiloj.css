@@ -173,7 +173,7 @@ h1 {
     justify-content: center;
 }
 .browser-name {
-    font-size: 1.2em;
+    font-size: 1.8em;
     font-weight: bold;
     margin: 0;
 }
@@ -229,7 +229,8 @@ h1 {
     align-items: center;
 }
 .platform-icon {
-    width: 16px;
-    height: 16px;
+    width: 32px;
+    height: 32px;
     margin-right: 5px;
 }
+
